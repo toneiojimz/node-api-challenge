@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     // log error to server
     console.log(error);
     res.status(500).json({
-      message: 'Error adding the user',
+      message: 'Error adding the project',
     });
   });
 });
@@ -63,14 +63,14 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
  
   Projects.get(req.params.id)
-  .then(user => {
-      res.status(200).json(user);  
+  .then(project => {
+      res.status(200).json(project);  
   })
   .catch(error => {
    
     console.log(error);
     res.status(500).json({
-      message: 'Error retrieving user'
+      message: 'Error retrieving project'
     });
   });
 });
@@ -96,7 +96,7 @@ router.get('/:id/actions', (req, res) => {
 router.delete('/:id', (req, res) => {
 
   Projects.remove(req.params.id)
-  .then(count => {
+  .then(response => {
       res.status(200).json({ message: 'The project has been erased' });
    
   })
