@@ -24,10 +24,15 @@ router.post('/', (req, res) => {
 
 //POST an action to project by id
 router.post('/:id/actions', (req, res) => {
+  const id = req.params.id;
+//   const actionInfo = { ...req.body, project_id:req.params.id}
+  const {description, notes} = req.body;
+
+  if(!req.body.project_id || !id){
+      return res.status(400).json({error : " please provide project_id: id"})
+  }
   
-  const actionInfo = { ...req.body, project_id:req.params.id}
-  
-  Actions.insert(actionInfo)
+  Actions.insert({description : description, notes:notes, project_id:id})
   .then(response => {
     res.status(201).json(response)
   })
