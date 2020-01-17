@@ -54,8 +54,9 @@ router.put('/:id', (req, res) => {
 
 
     const actionInfo = {
-        notes: req.body.name,
-        description: req.body.description
+        
+        description: req.body.description,
+        notes: req.body.notes
         
     }
 
