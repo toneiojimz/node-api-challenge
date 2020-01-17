@@ -114,11 +114,11 @@ router.put('/:id', (req, res) => {
   const { name, description } = req.body;
   Projects.update(id, {name: name, description:description})
   .then(() => {
-    return res.status(200).json({ message: "User Updated"});
+    return res.status(200).json({ message: "Project Updated"});
   })
   .catch(err => {
     console.log(err);
-    return res.status(500).json({ error: "User not updated" });
+    return res.status(500).json({ error: "project not updated" });
   })
 });
 
