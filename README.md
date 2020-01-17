@@ -39,14 +39,20 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
 - [ ] Mention two parts of Express that you learned about this week.
+         1. Middleware  2.Routing
 
 - [ ] Describe Middleware?
+        It can be described as an array of functions that are executed in the order they are introduced intro the server. Any middleware can stop the request and send a response to the client if the request does not meet the middleware criteria. 
 
 - [ ] Describe a Resource?
+        A resource is an object with that has relationship to other resources. it is an object with a type, related data, and has a set of methods that operate on it. 
 
 - [ ] What can the API return to help clients know if a request was successful?
+        It can return the information requested along with a message granting the request. message is not required but can help the client. The best part if when the middleware denies the request and sends a message with a detailed message describing why the request was denied. 
 
 - [ ] How can we partition our application into sub-applications?
+        having two app files. one is the main app.js and other can be alternate_app.js
+    then import  alternate_app into app and user it there. 
 
 ## Minimum Viable Product
 
